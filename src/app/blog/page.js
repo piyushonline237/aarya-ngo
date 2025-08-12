@@ -30,7 +30,7 @@ export default function BlogPage() {
               </h1>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 Stay updated with inspiring stories, program developments, and community news from Hope Foundation.
-                Discover the real impact we're making together and how you can be part of the change.
+                Discover the real impact we are making together and how you can be part of the change.
               </p>
             </div>
           </div>
