@@ -6,9 +6,9 @@ import Navbar from "../components/Shared/Navbar"
 import Footer from "../components/Shared/Footer"
 
 export const metadata = {
-  title: "Hope Foundation - Making a Difference Together",
+  title: "Prayas by Aarya Foundation - Making a Difference Together",
   description:
-    "Join Hope Foundation in creating positive change worldwide. Support our mission through donations, volunteering, and community engagement.",
+    "Join Prayas by Aarya Foundation in creating positive change worldwide. Support our mission through donations, volunteering, and community engagement.",
 }
 
 export default function HomePage() {

@@ -37,7 +37,7 @@ export default function HomePageImpact() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Our Impact in Numbers</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See the tangible difference we're making in communities worldwide through our dedicated efforts and your
+            See the tangible difference we are making in communities worldwide through our dedicated efforts and your
             generous support.
           </p>
         </div>

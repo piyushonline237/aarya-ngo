@@ -1,6 +1,6 @@
 import SchoolIcon from "@mui/icons-material/School"
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital"
-import EcoIcon from "@mui/icons-material/Eco"
+import NatureIcon from "@mui/icons-material/Nature" // replaced EcoIcon with NatureIcon
 import HomeIcon from "@mui/icons-material/Home"
 
 export default function HomePageAbout() {
@@ -16,7 +16,7 @@ export default function HomePageAbout() {
       description: "Delivering essential healthcare services and medical support to those who need it most.",
     },
     {
-      icon: EcoIcon,
+      icon: NatureIcon, // replaced EcoIcon with NatureIcon
       title: "Environment",
       description: "Promoting sustainable practices and environmental conservation for future generations.",
     },

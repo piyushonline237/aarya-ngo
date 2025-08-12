@@ -97,7 +97,7 @@ export default function WhoWeArePage() {
               </h1>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 Hope Foundation is a global nonprofit organization dedicated to creating sustainable change in
-                communities worldwide. Since 2010, we've been working tirelessly to improve lives through education,
+                communities worldwide. Since 2010, we have been working tirelessly to improve lives through education,
                 healthcare, and community development programs.
               </p>
             </div>
@@ -199,7 +199,7 @@ export default function WhoWeArePage() {
                 Our Journey
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                From humble beginnings to global impact, here are the key milestones in our organization's growth and
+                From humble beginnings to global impact, here are the key milestones in our organization s growth and
                 development.
               </p>
             </div>

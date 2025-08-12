@@ -1,9 +1,9 @@
 import { GeistSans } from "geist/font/sans"
 
 export const metadata = {
-  title: "Hope Foundation - Making a Difference",
+  title: "Prayas by Aarya Foundation - Making a Difference",
   description:
-    "Join us in creating positive change in communities worldwide. Donate, volunteer, and help us build a better tomorrow.",
+    "Join Prayas by Aarya Foundation in creating positive change in communities worldwide. Donate, volunteer, and help us build a better tomorrow.",
   generator: "Next.js",
 }
 

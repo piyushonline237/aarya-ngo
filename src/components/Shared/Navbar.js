@@ -28,10 +28,10 @@ export default function Navbar() {
               className="w-10 h-10 rounded-full flex items-center justify-center"
               style={{ backgroundColor: "#022741" }}
             >
-              <span className="text-white font-bold text-lg">H</span>
+              <span className="text-white font-bold text-lg">P</span>
             </div>
             <span className="font-bold text-xl" style={{ color: "#022741" }}>
-              Hope Foundation
+              Prayas by Aarya Foundation
             </span>
           </Link>
 

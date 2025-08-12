@@ -3,7 +3,7 @@ import Footer from "../../components/Shared/Footer"
 import DonateButton from "../../components/DonateButton/DonateButton"
 import SchoolIcon from "@mui/icons-material/School"
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital"
-import EcoIcon from "@mui/icons-material/Eco"
+import NatureIcon from "@mui/icons-material/Nature" // replaced EcoIcon with NatureIcon
 import HomeIcon from "@mui/icons-material/Home"
 import WaterDropIcon from "@mui/icons-material/WaterDrop"
 import AgricultureIcon from "@mui/icons-material/Agriculture"
@@ -44,7 +44,7 @@ export default function WhatWeDoPage() {
       ],
     },
     {
-      icon: EcoIcon,
+      icon: NatureIcon, // replaced EcoIcon with NatureIcon
       title: "Environmental Sustainability",
       description: "Promoting eco-friendly practices and environmental conservation for future generations.",
       impact: "500+ trees planted",
@@ -251,7 +251,7 @@ export default function WhatWeDoPage() {
                     Bringing Healthcare to Remote Villages
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Our mobile health clinics have revolutionized healthcare access in remote areas of Guatemala. We've
+                    Our mobile health clinics have revolutionized healthcare access in remote areas of Guatemala. We have
                     treated over 5,000 patients and trained 50 community health workers, creating a sustainable
                     healthcare network.
                   </p>

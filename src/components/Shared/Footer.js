@@ -20,14 +20,14 @@ export default function Footer() {
                 style={{ backgroundColor: "#ffb70b" }}
               >
                 <span className="font-bold text-lg" style={{ color: "#022741" }}>
-                  H
+                  P
                 </span>
               </div>
-              <span className="font-bold text-xl">Hope Foundation</span>
+              <span className="font-bold text-xl">Prayas by Aarya Foundation</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
-              Dedicated to creating positive change in communities worldwide through education, healthcare, and
-              sustainable development programs.
+              Registered under Section 8 of Company Act of India 2013, dedicated to creating positive change in
+              communities through education, healthcare, and sustainable development programs.
             </p>
             <div className="flex space-x-4">
               <FacebookIcon
@@ -96,18 +96,20 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <EmailIcon className="w-5 h-5" style={{ color: "#ffb70b" }} />
-                <span className="text-gray-300">info@hopefoundation.org</span>
+                <span className="text-gray-300">prayasbyaaryafoundation@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <PhoneIcon className="w-5 h-5" style={{ color: "#ffb70b" }} />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+91 6200218724</span>
               </div>
               <div className="flex items-start space-x-2">
                 <LocationOnIcon className="w-5 h-5 mt-1" style={{ color: "#ffb70b" }} />
                 <span className="text-gray-300">
-                  123 Hope Street
+                  Saraswati Vidya Nivas, Koramtoli, Behind Dr S N Yadav
                   <br />
-                  New York, NY 10001
+                  Infront of Saraswati Apartment, PO- Morabadi
+                  <br />
+                  PS-Lalpur, Ranchi, Jharkhand 834001
                 </span>
               </div>
             </div>
@@ -116,7 +118,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-600 mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © 2024 Hope Foundation. All rights reserved. |
+            © 2024 Prayas by Aarya Foundation. All rights reserved. | CIN: U85499JH2017NPL024878 |
             <Link href="/privacy" className="hover:text-white ml-1">
               Privacy Policy
             </Link>{" "}

@@ -41,7 +41,7 @@ export default function GetInvolvedClientPage() {
                 Ways to Make a Difference
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Choose how you'd like to contribute to our mission of creating positive change in communities.
+                Choose how you had like to contribute to our mission of creating positive change in communities.
               </p>
             </div>
 
@@ -280,7 +280,7 @@ export default function GetInvolvedClientPage() {
                         <p className="font-semibold" style={{ color: "#022741" }}>
                           Email
                         </p>
-                        <p className="text-gray-600">volunteer@hopefoundation.org</p>
+                        <p className="text-gray-600">prayasbyaaryafoundation@gmail.com</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
@@ -289,7 +289,7 @@ export default function GetInvolvedClientPage() {
                         <p className="font-semibold" style={{ color: "#022741" }}>
                           Phone
                         </p>
-                        <p className="text-gray-600">+91 98765 43210</p>
+                        <p className="text-gray-600">+91 6200218724</p>
                       </div>
                     </div>
                   </div>
@@ -311,7 +311,7 @@ export default function GetInvolvedClientPage() {
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-yellow-400 focus:outline-none"
                     />
                     <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-yellow-400 focus:outline-none">
-                      <option>I'm interested in...</option>
+                      <option>I am interested in...</option>
                       <option>Volunteering</option>
                       <option>Donating</option>
                       <option>Partnerships</option>
