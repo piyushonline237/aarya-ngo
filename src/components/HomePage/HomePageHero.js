@@ -11,7 +11,7 @@ export default function HomePageHero() {
           {/* Content */}
           <div className="space-y-8">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight" style={{ color: "#022741" }}>
-              Creating Hope, this is my changes
+              Creating Hope,
               <span className="block" style={{ color: "#ffb70b" }}>
                 Changing Lives
               </span>
