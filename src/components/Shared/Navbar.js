@@ -10,12 +10,12 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/who-we-are", label: "Who We Are?" },
-    { href: "/what-we-do", label: "What We Do?" },
-    { href: "/get-involved", label: "Get Involved" },
-    { href: "/resources", label: "Resources" },
-    { href: "/donate-now", label: "Donate Now" },
-    { href: "/blog", label: "Blog" },
+    // { href: "/who-we-are", label: "Who We Are?" },
+    // { href: "/what-we-do", label: "What We Do?" },
+    // { href: "/get-involved", label: "Get Involved" },
+    // { href: "/resources", label: "Resources" },
+    // { href: "/donate-now", label: "Donate Now" },
+    // { href: "/blog", label: "Blog" },
   ]
 
   return (
@@ -73,9 +73,9 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <div className="px-3 py-2">
+              {/* <div className="px-3 py-2">
                 <DonateButton size="small" />
-              </div>
+              </div> */}
             </div>
           </div>
         )}
