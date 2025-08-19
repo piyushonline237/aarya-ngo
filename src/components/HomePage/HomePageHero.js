@@ -23,7 +23,7 @@ export default function HomePageHero() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <DonateButton size="large" />
-              <button
+              {/* <button
                 className="px-8 py-4 text-lg font-semibold rounded-lg border-2 transition-all duration-200 hover:shadow-lg"
                 style={{
                   borderColor: "#022741",
@@ -32,7 +32,7 @@ export default function HomePageHero() {
                 }}
               >
                 Learn More
-              </button>
+              </button> */}
             </div>
 
             {/* Stats */}
