@@ -12,7 +12,7 @@ export default function HomePageImpact() {
       description: "People directly impacted by our programs",
     },
     {
-      icon: AttachMoneyIcon,
+      icon: PeopleIcon,
       number: "250000",
       label: "Funds Raised",
       description: "Total donations received this year",

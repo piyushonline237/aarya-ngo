@@ -48,7 +48,7 @@ export default function HomePageCTA() {
             <p className="text-gray-600 mb-6">
               Share your time and skills to directly impact lives and build stronger communities.
             </p>
-            <button
+            {/* <button
               className="px-8 py-4 text-lg font-semibold rounded-lg border-2 transition-all duration-200 hover:shadow-lg"
               style={{
                 borderColor: "#022741",
@@ -57,7 +57,7 @@ export default function HomePageCTA() {
               }}
             >
               Get Involved
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
