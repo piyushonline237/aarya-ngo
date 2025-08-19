@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          {/* <div>
             <h3 className="font-semibold text-lg mb-4" style={{ color: "#ffb70b" }}>
               Quick Links
             </h3>
@@ -86,7 +86,7 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact Info */}
           <div>
