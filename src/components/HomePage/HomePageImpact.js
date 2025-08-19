@@ -7,13 +7,13 @@ export default function HomePageImpact() {
   const stats = [
     {
       icon: PeopleIcon,
-      number: "50,000+",
+      number: "50+",
       label: "Lives Changed",
       description: "People directly impacted by our programs",
     },
     {
       icon: AttachMoneyIcon,
-      number: "$2.5M+",
+      number: "250000",
       label: "Funds Raised",
       description: "Total donations received this year",
     },
