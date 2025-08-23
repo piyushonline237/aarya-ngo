@@ -2,6 +2,9 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft"
+import ChevronRightIcon from "@mui/icons-material/ChevronRight"
+import DonateButton from "../DonateButton/DonateButton"
 
 export default function HomeCarousel() {
   const images = [
@@ -11,31 +14,56 @@ export default function HomeCarousel() {
   ]
 
   const [current, setCurrent] = useState(0)
+  const [direction, setDirection] = useState(0)
+
+  const nextSlide = () => {
+    setDirection(1)
+    setCurrent((prev) => (prev + 1) % images.length)
+  }
+
+  const prevSlide = () => {
+    setDirection(-1)
+    setCurrent((prev) => (prev - 1 + images.length) % images.length)
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length)
-    }, 4000) // 4 seconds per slide
+      nextSlide()
+    }, 4000)
     return () => clearInterval(interval)
-  }, [images.length])
+  }, [])
+
+  const variants = {
+    enter: (dir) => ({
+      x: dir > 0 ? 300 : -300,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir) => ({
+      x: dir < 0 ? 300 : -300,
+      opacity: 0,
+    }),
+  }
 
   return (
     <div
       className="relative w-full 
-      h-[250px]     /* small mobile */
-      sm:h-[350px]  /* bigger phones */
-      md:h-[400px]  /* tablets */
-      lg:h-[260px]  /* laptops (60% smaller) */
-      xl:h-[300px]  /* big desktops (60% smaller) */
-      overflow-hidden rounded-2xl shadow-lg"
+      h-[250px] sm:h-[350px] md:h-[400px] 
+      lg:h-[260px] xl:h-[300px]
+      overflow-hidden  shadow-lg"
     >
-      <AnimatePresence>
+      <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={images[current].src}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.6 }}
           className="absolute inset-0"
         >
           <Image
@@ -48,18 +76,48 @@ export default function HomeCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+      {/* Left Arrow */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 p-2 rounded-full text-white hover:bg-black/60 transition"
+      >
+        <ChevronLeftIcon fontSize="large" />
+      </button>
+
+      {/* Right Arrow */}
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 p-2 rounded-full text-white hover:bg-black/60 transition"
+      >
+        <ChevronRightIcon fontSize="large" />
+      </button>
+
+      {/* Navigation Bars */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex space-x-2">
         {images.map((_, idx) => (
           <button
             key={idx}
-            onClick={() => setCurrent(idx)}
-            className={`w-3 h-3 rounded-full ${
-              idx === current ? "bg-white" : "bg-gray-400"
+            onClick={() => {
+              setDirection(idx > current ? 1 : -1)
+              setCurrent(idx)
+            }}
+            className={`h-1 w-8 rounded-full transition-all ${
+              idx === current ? "bg-white" : "bg-gray-400/70"
             }`}
           />
         ))}
       </div>
+
+      {/* Donate Button */}
+        {/* Donate Button */}
+         {/* Donate Button */}
+    {/* Donate Button */}
+<div className="absolute bottom-4 right-4">
+  <DonateButton className="cursor-pointer hover:scale-105 transition" />
+</div>
+
+
+
     </div>
   )
 }

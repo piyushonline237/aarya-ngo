@@ -6,6 +6,7 @@ import Navbar from "../components/Shared/Navbar"
 import Footer from "../components/Shared/Footer"
 import HomeCarousel from "@/components/HomePage/HomeCarousel"
 import HomeSubscribe from "@/components/HomePage/HomeSubscribe"
+import HomeCards from "@/components/HomePage/HomeCards"
 
 export const metadata = {
   title: "Prayas by Aarya Foundation - Making a Difference Together",
@@ -24,6 +25,7 @@ export default function HomePage() {
         {/* 👆 Matches Navbar height (h-16 = 64px) */}
 
         <HomeCarousel />
+        <HomeCards/>
         <HomePageHero />
         <HomePageAbout />
         <HomePageImpact />
