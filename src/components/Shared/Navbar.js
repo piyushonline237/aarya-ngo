@@ -33,7 +33,7 @@ export default function Navbar() {
         { href: "/healthcare", label: "HealthCare" },
         // { href: "/community-support", label: "Community Support" },
 
-        { href: "/women-empowernment", label: "Women Empowernment" },
+        { href: "/women-empowerment", label: "Women Empowernment" },
 
        
       ],
@@ -63,7 +63,7 @@ export default function Navbar() {
       label: "Contact us",
       subLinks: [
         { href: "/reach-us", label: "Reach Us" },
-        { href: "/faq", label: "FAQs" },
+        { href: "/faqs", label: "FAQs" },
        
       ],
     },
