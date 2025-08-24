@@ -14,11 +14,7 @@ export default function DonateNowClientPage() {
   const [customAmount, setCustomAmount] = useState("")
   const [isCustom, setIsCustom] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  const [donorInfo, setDonorInfo] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  })
+  const [donorInfo, setDonorInfo] = useState({ name: "", email: "", phone: "" })
 
   const handleAmountSelect = (amount) => {
     setSelectedAmount(amount)
@@ -32,75 +28,70 @@ export default function DonateNowClientPage() {
     setSelectedAmount(0)
   }
 
-  const getFinalAmount = () => {
-    return isCustom ? Number.parseInt(customAmount) || 0 : selectedAmount
-  }
+  const getFinalAmount = () => (isCustom ? Number.parseInt(customAmount) || 0 : selectedAmount)
 
   const handleDonate = async () => {
     const amount = getFinalAmount()
-
-    if (amount < 1) {
-      alert("Please enter a valid donation amount")
-      return
-    }
-
-    if (!donorInfo.name || !donorInfo.email) {
-      alert("Please fill in your name and email")
-      return
-    }
+    if (amount < 1) return alert("Please enter a valid donation amount")
+    if (!donorInfo.name || !donorInfo.email) return alert("Please fill in your name and email")
 
     setIsLoading(true)
-
     try {
-      // Initialize Razorpay
+      // 1. Create order on backend
+      const orderRes = await fetch("/api/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount }),
+      })
+      const orderData = await orderRes.json()
+      if (!orderData?.id) throw new Error("Order creation failed")
+
+      // 2. Setup Razorpay options
       const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_1234567890", // Replace with your Razorpay key
-        amount: amount * 100, // Razorpay expects amount in paise
-        currency: "INR",
-        name: "Hope Foundation",
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_1234567890",
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: "Prayas by aarya foundation",
         description: "Donation to Hope Foundation",
         image: "/logo.png",
-        handler: (response) => {
-          // Handle successful payment
-          console.log("Payment successful:", response)
-          alert("Thank you for your donation! Payment ID: " + response.razorpay_payment_id)
+        order_id: orderData.id,
+        handler: async (response) => {
+          // Verify payment
+          const verifyRes = await fetch("/api/verify-payment", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(response),
+          })
+          const verifyData = await verifyRes.json()
 
-          // Reset form
-          setDonorInfo({ name: "", email: "", phone: "" })
-          setSelectedAmount(500)
-          setCustomAmount("")
-          setIsCustom(false)
+          if (verifyData.success) {
+            alert("🎉 Thank you! Payment successful. ID: " + response.razorpay_payment_id)
+            setDonorInfo({ name: "", email: "", phone: "" })
+            setSelectedAmount(500)
+            setCustomAmount("")
+            setIsCustom(false)
+          } else {
+            alert("❌ Payment verification failed.")
+          }
         },
         prefill: {
           name: donorInfo.name,
           email: donorInfo.email,
           contact: donorInfo.phone,
         },
-        notes: {
-          address: "Hope Foundation Donation",
-        },
-        theme: {
-          color: "#ffb70b",
-        },
-        modal: {
-          ondismiss: () => {
-            setIsLoading(false)
-          },
-        },
+        notes: { address: "Hope Foundation Donation" },
+        theme: { color: "#ffb70b" },
+        modal: { ondismiss: () => setIsLoading(false) },
       }
 
-      // Load Razorpay script if not already loaded
+      // 3. Load Razorpay SDK and open checkout
       if (!window.Razorpay) {
         const script = document.createElement("script")
         script.src = "https://checkout.razorpay.com/v1/checkout.js"
-        script.onload = () => {
-          const rzp = new window.Razorpay(options)
-          rzp.open()
-        }
+        script.onload = () => new window.Razorpay(options).open()
         document.body.appendChild(script)
       } else {
-        const rzp = new window.Razorpay(options)
-        rzp.open()
+        new window.Razorpay(options).open()
       }
     } catch (error) {
       console.error("Payment error:", error)
@@ -143,17 +134,14 @@ export default function DonateNowClientPage() {
                       <button
                         key={amount}
                         onClick={() => handleAmountSelect(amount)}
-                        className={`
-                          p-4 rounded-xl border-2 font-semibold transition-all duration-200
-                          ${
-                            selectedAmount === amount && !isCustom
-                              ? "border-yellow-400 shadow-lg"
-                              : "border-gray-200 hover:border-gray-300"
-                          }
-                        `}
+                        className={`p-4 rounded-xl border-2 font-semibold transition-all duration-200 ${
+                          selectedAmount === amount && !isCustom
+                            ? "border-yellow-400 shadow-lg"
+                            : "border-gray-200 hover:border-gray-300"
+                        }`}
                         style={{
                           backgroundColor: selectedAmount === amount && !isCustom ? "#ffb70b" : "#fefefe",
-                          color: selectedAmount === amount && !isCustom ? "#022741" : "#022741",
+                          color: "#022741",
                         }}
                       >
                         ₹{amount}
@@ -242,10 +230,7 @@ export default function DonateNowClientPage() {
                   onClick={handleDonate}
                   disabled={isLoading || getFinalAmount() < 1}
                   className="w-full py-4 px-8 rounded-xl font-bold text-lg transition-all duration-200 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-3"
-                  style={{
-                    backgroundColor: "#ffb70b",
-                    color: "#022741",
-                  }}
+                  style={{ backgroundColor: "#ffb70b", color: "#022741" }}
                 >
                   <FavoriteIcon className="w-6 h-6" />
                   <span>{isLoading ? "Processing..." : `Donate ₹${getFinalAmount()} Now`}</span>

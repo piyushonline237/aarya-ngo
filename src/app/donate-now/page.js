@@ -1,11 +1,11 @@
-import DonateNowClientPage from "./DonateNowClientPage"
+import DonateNowClientPage from "./DonateNowClientPage";
 
 export const metadata = {
-  title: "Donate Now - Hope Foundation | Make a Difference Today",
+  title: "Donate Now - Prayas by Aarya Foundation | Make a Difference Today",
   description:
-    "Support Hope Foundation's mission to create positive change in communities. Your donation helps fund education, healthcare, and community development programs.",
-}
+    "Support Hope Foundation's mission to create positive change in communities. Your donation helps fund education, healthcare, and community programs.",
+};
 
 export default function DonateNowPage() {
-  return <DonateNowClientPage />
+  return <DonateNowClientPage />;
 }
