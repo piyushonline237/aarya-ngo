@@ -13,20 +13,65 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "Home" },
     {
-      label: "About Us",
+      // label: "About Us",
+      label: "Who We Are?",
       subLinks: [
-        { href: "/who-we-are", label: "Who We Are?" },
-        { href: "/what-we-do", label: "What We Do?" },
-        { href: "/get-involved", label: "Get Involved" },
-        { href: "/resources", label: "Resources" },
+        { href: "/overview", label: "Overview" },
+        { href: "/missionview", label: "Vision & Mission" },
+        // { href: "/who-we-are", label: "Who We Are?" },
+        // { href: "/what-we-do", label: "What We Do?" },
+        // { href: "/get-involved", label: "Get Involved" },
+        { href: "/our-team", label: "Our Team" },
+        { href: "/certificate", label: "Certificate" },
+
       ],
     },
-    { href: "/blog", label: "Blog" },
+     {
+      label: "What We Do?",
+      subLinks: [
+        { href: "/education", label: "Education" },
+        { href: "/healthcare", label: "HealthCare" },
+        // { href: "/community-support", label: "Community Support" },
+
+        { href: "/women-empowerment", label: "Women Empowernment" },
+
+       
+      ],
+    },
+
+            {
+      label: "News & stories",
+      subLinks: [
+        { href: "/photo-gallery", label: "Photo Gallery" },
+        { href: "/video-gallery", label: "Video Gallery" },
+        { href: "/resources", label: "Resources" },
+    
+      ],
+    },
+      {
+      label: "Get Involved",
+      subLinks: [
+
+        { href: "/work-with-us", label: "Work with us" },
+        { href: "/corporate-partnership", label: "Corporate partnership" },
+       
+      ],
+    },
+        { href: "/blog", label: "Blog" },
+
+            {
+      label: "Contact us",
+      subLinks: [
+        { href: "/reach-us", label: "Reach Us" },
+        { href: "/faqs", label: "FAQs" },
+       
+      ],
+    },
   ]
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">

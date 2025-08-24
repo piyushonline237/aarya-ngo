@@ -51,8 +51,8 @@ export default function HomeCarousel() {
   return (
     <div
       className="relative w-full 
-      h-[250px] sm:h-[350px] md:h-[400px] 
-      lg:h-[260px] xl:h-[300px]
+      h-[250px] sm:h-[350px] md:h-[350px] 
+      lg:h-[260px] xl:h-[370px]
       overflow-hidden  shadow-lg"
     >
       <AnimatePresence initial={false} custom={direction}>
