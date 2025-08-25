@@ -1,25 +1,28 @@
+"use client";
 
-"use client"
-import { motion } from "framer-motion"
-
-export default function Vision() {
+export default function OurVision() {
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-6 lg:px-20">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="bg-gray-50 shadow-md rounded-2xl p-8 text-center"
-        >
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Vision</h2>
-          <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            To become a trusted brand that inspires confidence and sets new
-            standards of excellence in footwear, combining comfort, quality,
-            and style for every woman.
-          </p>
-        </motion.div>
+    <section className="bg-[#011728] text-white py-20 px-6 relative overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFB70B] rounded-full blur-3xl opacity-20"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FFB70B] rounded-full blur-3xl opacity-20"></div>
+
+      <div className="max-w-5xl mx-auto relative z-10 text-center">
+        {/* Title */}
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#FFB70B] mb-6">
+          Our Vision
+        </h2>
+
+        {/* Divider */}
+        <div className="w-24 h-1 bg-[#FFB70B] mx-auto mb-10 rounded-full"></div>
+
+        {/* Content */}
+        <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-gray-200">
+          To build a world where every individual has the <span className="text-[#FFB70B] font-semibold">opportunity to thrive</span>. 
+          Through education, healthcare, and empowerment, we envision communities 
+          that are self-reliant, compassionate, and progressive.  
+        </p>
       </div>
     </section>
-  )
+  );
 }

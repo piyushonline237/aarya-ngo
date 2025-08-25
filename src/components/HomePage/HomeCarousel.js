@@ -7,14 +7,23 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight"
 import DonateButton from "../DonateButton/DonateButton"
 
 export default function HomeCarousel() {
-  const images = [
+  const mobileImages = [
     { src: "/images/Slide1.png", alt: "Slide 1" },
     { src: "/images/Slide2.png", alt: "Slide 2" },
     { src: "/images/Slide3.png", alt: "Slide 3" },
   ]
 
+  const desktopImages = [
+    { src: "/images/CAROUSEL1.png", alt: "Carousel 1" },
+    { src: "/images/CAROUSEL2.png", alt: "Carousel 2" },
+    { src: "/images/CAROUSEL3.png", alt: "Carousel 3" },
+  ]
+
+  const [isDesktop, setIsDesktop] = useState(false)
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(0)
+
+  const images = isDesktop ? desktopImages : mobileImages
 
   const nextSlide = () => {
     setDirection(1)
@@ -27,12 +36,22 @@ export default function HomeCarousel() {
   }
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024) // lg breakpoint
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  useEffect(() => {
     const interval = setInterval(() => {
       nextSlide()
     }, 4000)
     return () => clearInterval(interval)
-  }, [])
+  }, [images])
 
+  // ✅ Framer Variants in JavaScript (no type annotations)
   const variants = {
     enter: (dir) => ({
       x: dir > 0 ? 300 : -300,
@@ -53,7 +72,7 @@ export default function HomeCarousel() {
       className="relative w-full 
       h-[250px] sm:h-[350px] md:h-[350px] 
       lg:h-[260px] xl:h-[370px]
-      overflow-hidden  shadow-lg"
+      overflow-hidden shadow-lg"
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
@@ -109,15 +128,9 @@ export default function HomeCarousel() {
       </div>
 
       {/* Donate Button */}
-        {/* Donate Button */}
-         {/* Donate Button */}
-    {/* Donate Button */}
-<div className="absolute bottom-4 right-4">
-  <DonateButton className="cursor-pointer hover:scale-105 transition" />
-</div>
-
-
-
+      <div className="absolute bottom-4 right-4">
+        <DonateButton className="cursor-pointer hover:scale-105 transition" />
+      </div>
     </div>
   )
 }

@@ -1,24 +1,29 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
 
-export default function Mission() {
+export default function OurMission() {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-6 lg:px-20">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white shadow-md rounded-2xl p-8 text-center"
-        >
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
-          <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            To deliver high-quality, stylish, and affordable footwear that
-            empowers women to step forward with confidence in every walk of
-            life.
-          </p>
-        </motion.div>
+    <section className="bg-[#011728] text-white py-20 px-6 relative overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-[#FFB70B] rounded-full blur-3xl opacity-20"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#FFB70B] rounded-full blur-3xl opacity-20"></div>
+
+      <div className="max-w-5xl mx-auto relative z-10 text-center">
+        {/* Title */}
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#FFB70B] mb-6">
+          Our Mission
+        </h2>
+
+        {/* Divider */}
+        <div className="w-24 h-1 bg-[#FFB70B] mx-auto mb-10 rounded-full"></div>
+
+        {/* Content */}
+        <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-gray-200">
+          Our mission is to <span className="text-[#FFB70B] font-semibold">empower communities</span> 
+          by providing access to quality education, sustainable healthcare, and livelihood opportunities.  
+          We are committed to creating an environment where individuals can 
+          <span className="text-[#FFB70B] font-semibold"> grow with dignity, hope, and confidence</span>.  
+        </p>
       </div>
     </section>
-  )
+  );
 }
